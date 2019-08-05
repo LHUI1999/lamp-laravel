@@ -58,7 +58,10 @@ class LoginController extends Controller
          $nodes_data['indexcontroller'][] = 'index'; 
 
         //当前权限压入session
-        session(['admin_nodes'=>$nodes_data]);
+		session(['admin_nodes'=>$nodes_data]);
+		
+		// 将登录名压入session
+		session(['uname'=>$uname]);
 
     	//跳转
     	return redirect('admin');

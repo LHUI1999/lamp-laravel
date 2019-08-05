@@ -13,11 +13,16 @@ class NodesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $data = DB::table('nodes')->get();
-        return view('admin.nodes.index',['data'=>$data]);
+        // 获取搜索内容
+        $search = $request->input('search','');
+
+        // 获取数据
+        
+        $data = DB::table('nodes')->where('desc','like','%'.$search.'%')->paginate(4);
+        // dd($data);
+        return view('admin.nodes.index',['data'=>$data,'requests'=>$request->input()]);
 
 
     }
@@ -43,7 +48,7 @@ class NodesController extends Controller
     {
         //
         $data = $request->except('_token');
-        $data['cname'] = $data['cname'] .'controller';
+        $data['cname'] = $data['cname'].'controller';
         $res = DB::table('nodes')->insert($data);
         if($res){
             return redirect('admin/nodes')->with('success','添加成功');

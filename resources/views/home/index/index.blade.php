@@ -41,10 +41,10 @@
 									<div class="category">
 										<ul class="category-list" id="js_climit_li">
 
-											@foreach($cates_1 as $k => $v)
+											{{-- @foreach($cates_1 as $k => $v) --}}
 											<li class="appliance js_toggle relative first">
 												<div class="category-info">
-													<h3 class="category-name b-category-name"><a class="ml-22" title="点心">{{$v->cname}}</a></h3>
+													<h3 class="category-name b-category-name"><a class="ml-22" title="点心">qqq</a></h3>
 													<em>&gt;</em></div>
 												<div class="menu-item menu-in top" style="display: none;">
 													<div class="area-in">
@@ -69,7 +69,7 @@
 												</div>
 											<b class="arrow"></b>	
 											</li>
-											@endforeach
+											{{-- @endforeach --}}
 											
 										</ul>
 									</div>

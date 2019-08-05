@@ -3,7 +3,7 @@
 
 <div class="box span12" style="">
 	<div class="box-header" data-original-title="">
-		<h2><i class="halflings-icon white edit"></i><span class="break"></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用户添加</font></font></h2>
+		<h2><i class="halflings-icon white edit"></i><span class="break"></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">角色添加</font></font></h2>
 		<div class="box-icon">
 			<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
 			<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
@@ -14,7 +14,7 @@
 		<form class="form-horizontal" action="/admin/roles" method="post" enctype="multipart/form-data">
 			{{csrf_field()}}
 
-			<input type="hidden" name="_token" value="uhkuS5vb3gF17KSHh8Y0MmpJ6BgcXnbvlnTuRDUd">
+			{{-- <input type="hidden" name="_token" value="uhkuS5vb3gF17KSHh8Y0MmpJ6BgcXnbvlnTuRDUd"> --}}
 			<fieldset>
 				<!-- 用户名 -->
 			  <div class="control-group">
