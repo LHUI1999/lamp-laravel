@@ -11,10 +11,10 @@
 		</div>
 	</div>
 	<div class="box-content">
-		<form class="form-horizontal" action="/admin/roles" method="post" enctype="multipart/form-data">
+		<form class="form-horizontal" action="/admin/roles/store" method="post" enctype="multipart/form-data">
 			{{csrf_field()}}
 
-			<input type="hidden" name="_token" value="uhkuS5vb3gF17KSHh8Y0MmpJ6BgcXnbvlnTuRDUd">
+			<!-- <input type="hidden" name="_token" value="uhkuS5vb3gF17KSHh8Y0MmpJ6BgcXnbvlnTuRDUd"> -->
 			<fieldset>
 				<!-- 用户名 -->
 			  <div class="control-group">

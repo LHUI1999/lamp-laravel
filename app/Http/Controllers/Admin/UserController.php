@@ -22,7 +22,6 @@ class UserController extends Controller
     {
         //获得搜索内容
         $search = $request->input('search','');
-
         //获取数据
         $users=Users::where('uname','like','%'.$search.'%')->paginate(1);
         return view("admin.users.index",['users'=>$users,'requests'=>$request->input()]);

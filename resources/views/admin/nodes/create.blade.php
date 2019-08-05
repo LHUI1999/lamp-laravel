@@ -10,10 +10,10 @@
 		</div>
 	</div>
 	<div class="box-content">
-		<form class="form-horizontal" action="/admin/nodes" method="post" enctype="multipart/form-data">
+		<form class="form-horizontal" action="/admin/nodes/store" method="post" enctype="multipart/form-data">
 			{{csrf_field()}}
 
-			<input type="hidden" name="_token" value="uhkuS5vb3gF17KSHh8Y0MmpJ6BgcXnbvlnTuRDUd">
+			<!-- <input type="hidden" name="_token" value="uhkuS5vb3gF17KSHh8Y0MmpJ6BgcXnbvlnTuRDUd"> -->
 			<fieldset>
 				<!-- 用户名 -->
 			  <div class="control-group">
@@ -26,14 +26,14 @@
 			   <div class="control-group">
 				<label class="control-label" for="focusedInput"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">控制器名称</font></font></label>
 				<div class="controls">
-				  <input class="input-xlarge focused" id="focusedInput" type="password" value="" name="cname">
+				  <input class="input-xlarge focused" id="focusedInput" type="text" value="" name="cname">
 				</div>
 			  </div>
 			  <!-- 确认密码 -->
 			   <div class="control-group">
 				<label class="control-label" for="focusedInput"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">方法名称</font></font></label>
 				<div class="controls">
-				  <input class="input-xlarge focused" id="focusedInput" type="password" value="" name="aname">
+				  <input class="input-xlarge focused" id="focusedInput" type="text" value="" name="aname">
 				</div>
 			  </div>
 			 

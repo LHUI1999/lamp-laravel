@@ -40,33 +40,42 @@
 									
 									<div class="category">
 										<ul class="category-list" id="js_climit_li">
-
-											@foreach($cates_1 as $k => $v)
+											@foreach($cate as $k => $v)
 											<li class="appliance js_toggle relative first">
+
 												<div class="category-info">
 													<h3 class="category-name b-category-name"><a class="ml-22" title="点心">{{$v->cname}}</a></h3>
 													<em>&gt;</em></div>
+											
+
+
+												
+
 												<div class="menu-item menu-in top" style="display: none;">
 													<div class="area-in">
 														<div class="area-bg">
 															<div class="menu-srot">
 																<div class="sort-side">
-
+															@foreach($v->sub as $a => $b)
 
 																	<dl class="dl-sort">
-
-																		<dt><span title="蛋糕">蛋糕</span></dt>
-																		<dd><a title="蒸蛋糕" href="#"><span>蒸蛋糕</span></a></dd>
+																		<dt><span title="蛋糕">{{$b->cname}}</span></dt>
+																		@foreach($b->sub as $c => $d)
+																		<dd><a title="蒸蛋糕" href="#"><span>{{$d->cname}}</span></a></dd>
+																		@endforeach
 																		
 																	</dl>
+																@endforeach
 
 																	
+
 																</div>
 																
 															</div>
 														</div>
 													</div>
 												</div>
+											
 											<b class="arrow"></b>	
 											</li>
 											@endforeach
@@ -1627,7 +1636,7 @@
 
 					<div id="brand " class="item ">
 						<a href="#">
-							<span class="wdsc "><img src="images/wdsc.png "></span>
+							<span class="wdsc "><img src="/h/images/wdsc.png "></span>
 						</a>
 						<div class="mp_tooltip " style="left: -121px; visibility: hidden;">
 							我的收藏
@@ -1637,7 +1646,7 @@
 
 					<div id="broadcast " class="item ">
 						<a href="# ">
-							<span class="chongzhi "><img src="images/chongzhi.png "></span>
+							<span class="chongzhi "><img src="/h/images/chongzhi.png "></span>
 						</a>
 						<div class="mp_tooltip " style="left: -121px; visibility: hidden;">
 							我要充值

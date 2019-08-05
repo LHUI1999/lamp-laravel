@@ -22,7 +22,7 @@ class CatesController extends Controller
         return $cates;
     } 
     /**
-     * Display a listing of the resource.
+     * 分类列表
      *
      * @return \Illuminate\Http\Response
      */
@@ -33,7 +33,7 @@ class CatesController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 分类添加页面
      *
      * @return \Illuminate\Http\Response
      */
@@ -45,7 +45,7 @@ class CatesController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 处理分类添加
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response

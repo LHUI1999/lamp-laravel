@@ -1,5 +1,6 @@
 @extends('home.layout.index')
 @section('content')
+		<link href="/h/css/cartstyle.css" rel="stylesheet" type="text/css" />
 <div id="cartTable">
 					@if(!$data)	
 					<img src="https://img02.hua.com/pc/images/gwc_k2.jpg">

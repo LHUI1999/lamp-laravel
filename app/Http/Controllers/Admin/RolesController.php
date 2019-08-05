@@ -11,9 +11,14 @@ class RolesController extends Controller
     public static function controllernames()
     {
         return [
-            'admincontroller'=>'用户管理',
-            'usercontroller'=>'商品管理',
-            'wqecontroller'=>'wqe',
+            'usercontroller'=>'用户管理',
+            'catescontroller'=>'分类管理',
+            'adminusercontroller'=>'管理员管理',
+            'rolescontroller'=>'角色管理',
+            'nodescontroller'=>'权限管理',
+            'goodscontroller'=>'商品管理',
+            
+            
         ];
     } 
     public static function nodes()
@@ -55,7 +60,9 @@ class RolesController extends Controller
         //
         $nodes = self::nodes();
         $controllernames = self::controllernames();
+
         return view('admin.roles.create',['nodes'=>$nodes,'controllernames'=>$controllernames]);
+
     }
 
     /**
@@ -66,7 +73,9 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
+        //开启事务
         DB::beginTransaction();
+        //提交信息
         $rname = $request->input('rname');
         $nid = $request->input('nid');
 

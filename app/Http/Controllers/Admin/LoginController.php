@@ -15,14 +15,6 @@ class LoginController extends Controller
     	return view('admin.login.login');
     }
     public function dologin(Request $request){
-    	dump($request->all());
-    	// $arr=[
-    	// 	['uname'=>'zahngsan','upass'=>Hash::make('123456')],
-    	// 	['uname'=>'lisi','upass'=>Hash::make('123456')],
-    	// 	['uname'=>'admin','upass'=>Hash::make('123456')],
-    	// ];
-    	// DB::table('admin_users')->insert($arr);
-
     	//获取信息
     	$uname = $request ->input('uname','');
     	$upass = $request ->input('upass','');
@@ -40,7 +32,8 @@ class LoginController extends Controller
 
     	//登陆成功
     	session(['admin_login'=>true]);
-    	session(['admin_userinfo'=>$userinfo]);
+    	// session(['admin_userinfo'=>$userinfo]);
+        $_SESSION['admin_userinfo'] = $userinfo;
 
         $nodes = DB::select('select n.cname,n.aname from nodes as n, users_roles as ur,roles_nodes as rn where ur.uid = '.$userinfo->id.' and ur.rid = rn.rid and rn.nid = n.id');
         $nodes_data = [];
@@ -64,5 +57,12 @@ class LoginController extends Controller
     	return redirect('admin');
 
 
+    }
+
+    //退出登录
+    public function logout(){
+        $_SESSION['admin_userinfo'] = null;
+        session(['admin_login'=>false]);
+        return redirect('admin/login');
     }
 }

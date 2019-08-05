@@ -22,7 +22,8 @@ Route::get('/', function () {
 Route::get('admin/login','Admin\LoginController@login');
 //后台执行登录路由
 Route::post('admin/login/dologin','Admin\LoginController@dologin');
-
+//退出登录
+Route::get('admin/login/logout','Admin\LoginController@logout');
 //权限页面
 Route::get('admin/allow',function(){
 	return view('admin.allow.allow');
@@ -38,10 +39,16 @@ Route::group(['middleware'=>['login']],function(){
 	//后台管理员路由
 	Route::resource('admin/adminuser','Admin\AdminuserController');
 	//后台权限管理
+	Route::post('/admin/nodes/store','Admin\NodesController@store');
 	Route::resource('admin/nodes','Admin\NodesController');
+
 	//后台角色管理
+	Route::post('/admin/roles/store','Admin\RolesController@store');
 	Route::resource('admin/roles','Admin\RolesController');
 
+	//后台商品管理
+	Route::resource('admin/goods','Admin\GoodsController');
+ 
 });
 Route::get('home/register/changestatus','Home\RegisterController@changestatus');
 Route::get('home/register/sendPhone','Home\RegisterController@sendPhone');

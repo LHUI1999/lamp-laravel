@@ -41,6 +41,7 @@ class NodesController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         //
         $data = $request->except('_token');
         $data['cname'] = $data['cname'] .'controller';
